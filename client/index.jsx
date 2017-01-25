@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, hashHistory } from 'react-router';
 import { store } from './reducers';
 
 import App from './containers/app';
+import Landing from './components/landing';
 import LoginField from './containers/login-field';
 import UserForm from './containers/addUser';
 import RenderClassBuilder from './components/render_class_builder';
@@ -50,8 +51,9 @@ ReactDOM.render(
 
   <Provider store={store}>
     <Router history={hashHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={LoginField} />
+      <Route path="/" component={Landing} />
+      <Route component={App}>
+        <Route path="/login" component={LoginField} />
         <Route path="/class" component={RenderClassBuilder} />
         <Route path="/user" component={UserForm} />
         <Route path="/classes" component={RenderClasses} />

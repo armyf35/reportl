@@ -15,6 +15,7 @@ const app = express();
 app.use(authMiddleware.userInject);
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../dist')));
+app.use('/node_modules', express.static(path.join(__dirname, '../node_modules')));
 app.use('/api', apiRouter);
 app.use('/auth', authRouter);
 

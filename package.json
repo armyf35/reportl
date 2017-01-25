@@ -68,6 +68,8 @@
     "knex": "^0.12.6",
     "loader": "^2.1.1",
     "lodash": "^4.17.2",
+    "material-components-web": "^0.2.0",
+    "material-design-icons": "^3.0.1",
     "mysql": "^2.12.0",
     "path": "^0.12.7",
     "react": "^15.4.1",
